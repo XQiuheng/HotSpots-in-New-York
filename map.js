@@ -49,23 +49,23 @@ for (i=0; i<layers.length; i++) {
 // 
 // INFO WINDOW CODE 
 
-    map.on('mousemove', function(e) {   // Event listener to do some code when the mouse moves, see https://www.mapbox.com/mapbox-gl-js/api/#events. 
+    // map.on('mousemove', function(e) {   // Event listener to do some code when the mouse moves, see https://www.mapbox.com/mapbox-gl-js/api/#events. 
 
-        var parks = map.queryRenderedFeatures(e.point, {    
-            layers: ['cville-parks']    // replace 'cville-parks' with the name of the layer you want to query (from your Mapbox Studio map, the name in the layers panel). For more info on queryRenderedFeatures, see the example at https://www.mapbox.com/mapbox-gl-js/example/queryrenderedfeatures/. Documentation at https://www.mapbox.com/mapbox-gl-js/api/#map#queryrenderedfeatures.
-        });
+    //     var parks = map.queryRenderedFeatures(e.point, {    
+    //         layers: ['cville-parks']    // replace 'cville-parks' with the name of the layer you want to query (from your Mapbox Studio map, the name in the layers panel). For more info on queryRenderedFeatures, see the example at https://www.mapbox.com/mapbox-gl-js/example/queryrenderedfeatures/. Documentation at https://www.mapbox.com/mapbox-gl-js/api/#map#queryrenderedfeatures.
+    //     });
               
-        if (parks.length > 0) {   // if statement to make sure the following code is only added to the info window if the mouse moves over a state
+    //     if (parks.length > 0) {   // if statement to make sure the following code is only added to the info window if the mouse moves over a state
 
-            $('#info-window-body').html('<h3><strong>' + parks[0].properties.PARKNAME + '</strong></h3><p>' + parks[0].properties.PARK_TYPE + ' PARK</p><img class="park-image" src="img/' + parks[0].properties.PARKNAME + '.jpg">');
+    //         $('#info-window-body').html('<h3><strong>' + parks[0].properties.PARKNAME + '</strong></h3><p>' + parks[0].properties.PARK_TYPE + ' PARK</p><img class="park-image" src="img/' + parks[0].properties.PARKNAME + '.jpg">');
 
-        } else {    // what shows up in the info window if you are NOT hovering over a park
+    //     } else {    // what shows up in the info window if you are NOT hovering over a park
 
-            $('#info-window-body').html('<p>Not hovering over a <strong>park</strong> right now.</p>');
+    //         $('#info-window-body').html('<p>Not hovering over a <strong>park</strong> right now.</p>');
             
-        }
+    //     }
 
-    });
+    // });
 
 // POPUPS CODE
 
