@@ -9,7 +9,7 @@ body {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	width: 60%;	/* 60% of viewport width */
+	width: 100%;	/* 60% of viewport width */
 	height: 100vh;	/* 100% of viewport height */
 }
 
@@ -112,7 +112,7 @@ body {
 #info-window {
     top: 0;
     right: 0;
-    width: 40%;
+    width: 5%;
     height: 100vh;
     background-color: deeppink;
 }

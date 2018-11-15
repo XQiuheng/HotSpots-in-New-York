@@ -22,10 +22,11 @@
   <!-- Map sidebar --> 
   <div id="sidebar">
     <div id="chapters"></div>
+    
   </div>
 
   <!-- About this map button -->
-  <button id="about" class='button-default'>About this map</button>
+  <button id="about" class='button-default'>About</button>
   
   <!-- The map will be added to this div by javascript --> 
   <div id="map"></div>
@@ -33,9 +34,9 @@
   <!-- A modal, hidden by default in our css, which provides info about this project when shown -->
   <div class='modal'>
     
-    <h2 class='modal-title'>About this project</h2>
+    <h2 class='modal-title'>About</h2>
     
-    <div class='modal-body'><p>This is an example map of Charlottesville created in the Scripting Civic Engagement seminar at the University of Virginia (Fall 2017), taught by Andrea Hansen Phillips.</p><p>Map data courtesy of <a href='https://www.mapbox.com/studio/'>Mapbox Studio</a> and the <a href='http://www.charlottesville.org/online-services/maps-and-gis-data'>City of Charlottesville</a></p><p>For questions or to improve this map, contact <a href='mailto:ah2th@virginia.edu'>Andrea Hansen Phillips</a></p></div>
+    <div class='modal-body'><p>This is a map of New York created in the Scripting Civic Engagement seminar at the University of Virginia (Fall 2018), taught by Andrea Hansen Phillips.</p><p>Map data courtesy of <a href='https://www.mapbox.com/studio/'>Mapbox Studio</a> and the <a href='http://www.charlottesville.org/online-services/maps-and-gis-data'>New York City Open Data</a></p><p>For questions or to improve this map, contact <a href='qx6kp@virginia.edu'>Qiuheng Xu</a></p></div>
     
     <button class='close-button'>&times;</button>  <!-- A special "x" character (the multiply sign) used in close buttons -->  
   </div>
@@ -44,7 +45,7 @@
   <!-- color change selector -->
   <div class='map-overlay' id='color-changer'>
     <div>
-      <label>Bus stops:</label>
+      <label>Hotspot:</label>
       <div id='swatches'></div>
     </div>
   </div>
@@ -55,9 +56,9 @@
   <!-- Info window (populated by javascript code from the Mapbox map layers) -->
   <div class='map-overlay' id='info-window'>
     <div>
-      <h2>Charlottesville Parks and Transit</h2>
+      <h2>Hot Spots in New York</h2>
       <div id='info-window-body'>
-        <p>Hover over a park or click on a bus stop to learn more about it.</p>
+        <p>Find the hottest place to meet friends, relax and have fun.</p>
       </div>
     </div>
   </div>

@@ -1,12 +1,12 @@
 // Initialize map
-mapboxgl.accessToken = 'pk.eyJ1IjoicmV2ZWlsbGV0dGUiLCJhIjoidmZvYW11SSJ9.2WIhYoRgi7LZF1zOS2xUoA'; // replace this value with your own access token from Mapbox Studio
+mapboxgl.accessToken = 'pk.eyJ1IjoibGl0dGxleHUiLCJhIjoiY2l3Yzl5dzE3MDAzNjJ5dW01cDQ3ajVocyJ9.ePXOQGL4SV7q6vxYv8mUBQ'; // replace this value with your own access token from Mapbox Studio
 
 var map = new mapboxgl.Map({
 	container: 'map', // this is the ID of the div in index.html where the map should go
-    center: [-78.474205,38.031331], // set the centerpoint of the map programatically. Note that this is [longitude, latitude]!
-    zoom: 13, // set the default zoom programatically
-	style: 'mapbox://styles/reveillette/cjn4xaurv2lym2rleo9lz2wj3', // replace this value with the style URL from Mapbox Studio
-	customAttribution: 'City of Charlottesville Open Data Portal (http://opendata.charlottesville.org/)', // Custom text used to attribute data source(s)
+    center: [-73.918435,40.702564], // set the centerpoint of the map programatically. Note that this is [longitude, latitude]!
+    zoom: 12, // set the default zoom programatically
+	style: 'mapbox://styles/littlexu/cjod694xf0l2v2rpn0dge2wt2', // replace this value with the style URL from Mapbox Studio
+	customAttribution: 'NYC OpenData (https://opendata.cityofnewyork.us/)', // Custom text used to attribute data source(s)
 });
 
 // Show modal when About button is clicked
@@ -23,21 +23,15 @@ $(".modal>.close-button").on('click', function() { // Click event handler for th
 
 // Legend
 var layers = [ // an array of the possible values you want to show in your legend
-    'Civic Spaces',
-    'Community Park',
-    'Neighborhood Park',
-    'Cemetery',
-    'Urban Park',
-    'Regional Park'
+
 ];
 
 var colors = [ // an array of the color values for each legend item
-    '#800000',
-    '#800030',
-    '#800060',
-    '#80006c',
-    '#800090',
-    '#80009c'
+    '#ef486f',
+    '#da5dbd',
+    '#f37794',
+    '#ebf4ed',
+    '#daece3',
 ];
 
 // for loop to create individual legend items
@@ -122,11 +116,11 @@ for (i=0; i<layers.length; i++) {
         // [layerMachineName, layerDisplayName]
         // layerMachineName is the layer name as written in your Mapbox Studio map layers panel
         // layerDisplayName is the way you want the layer's name to appear in the layers control on the website
-        ['cville-bus-stops', 'Bus Stops'],                      // layers[0]
-        ['cville-parks', 'Parks'],                              // layers[1][1] = 'Parks'
-        ['cville-bike-lanes', 'Bike Lanes'],     
-        ['cville-bus-stops-heatmap', 'Bus Stop Heatmap'],
-        ['background', 'Map background']
+        ['Commercial Area', 'Commercial Area'],                      // layers[0]
+        ['Cafe', 'Cafe'],                              // layers[1][1] = 'Parks'
+        ['Public Space', 'Public Space'],     
+        ['National Park', 'National Park'],
+        ['Cemetery', 'Cemetery']
         // add additional live data layers here as needed
     ]; 
 
@@ -168,13 +162,13 @@ for (i=0; i<layers.length; i++) {
     var swatches = $("#swatches");
 
     var colors = [  // an array of color options for the bus stop ponts
-        '#F44336',
-        '#e91e63',
-        '#9c27b0',
-        '#673ab7'
+        '#ff4747',
+        '#F06543',
+        '#813C5F',
+        '#443047'
     ]; 
 
-    var layer = 'cville-bus-stops';
+    var layer = 'hotspot';
 
     colors.forEach(function(color) {
         var swatch = $("<button class='swatch'></button>").appendTo(swatches);
@@ -194,40 +188,40 @@ for (i=0; i<layers.length; i++) {
     // A JavaScript object containing all of the data for each site "chapter" (the sites to zoom to while scrolling)
     var chapters = {
         'darden-towe': {
-            name: "Darden Towe Park",
-            description: "Ut nisl quam, fringilla efficitur elementum in, congue vel mi. Nullam consequat pharetra nibh, non accumsan nisl cursus sed. Pellentesque at ex lacus. Ut fringilla nunc id leo maximus ullamcorper. Donec volutpat placerat accumsan. Nulla id luctus diam. Aliquam tincidunt pulvinar mattis. Donec tempor, massa vel vehicula feugiat, diam sem suscipit nisi, eu tempor turpis lorem ac ipsum. Proin quis lectus mattis enim luctus faucibus sit amet vel metus. Etiam luctus nunc eget velit vestibulum posuere. Maecenas enim velit, elementum a suscipit vel, bibendum in odio. Nunc porta, eros nec vehicula pretium, tellus sapien fermentum risus, a pulvinar elit libero ut nisi. Nunc interdum lacus eu ornare dapibus. Suspendisse vitae diam eu turpis venenatis tempor. Ut sodales vel ex finibus facilisis. Nunc hendrerit, augue eget vulputate pellentesque, nibh erat imperdiet justo, id iaculis risus sem commodo urna.",
-            imagepath: "img/Darden Towe.jpg",
+            name: "La Esquina",
+            description: "STAR PATRONS Kate Hudson, Julia Roberts, George Clooney THE SCOOP Celebrities flock to this Mexican eatery as much for the mystery as for the eats. V.I.P. patrons know to enter the street level taqueria and proceed through a dingy door marked Employees Only to reach the subterranean dining area, but just knowing how to get there isn't always enough-the restaurant operates on a strict reservations-only policy. WHAT TO ORDER Indulge in the Costillas de Puerco, a charred Chipotle-Guava Glazed Pork Spare Ribs with sweet plantains and escabeche, $21 .",
+            imagepath: "img/La Esquina.jpg",
             bearing: 0,
-            center: [ -78.450021, 38.042260],
-            zoom: 15.20,
+            center: [ -73.997588, 40.721100],
+            zoom: 16,
             pitch: 60
         },
         'mcguffey-park': {
-            name: "McGuffey Park",
-            description: "Aliquam mollis consequat libero, at egestas mi facilisis in. Maecenas sed porta arcu, nec mattis ligula. Sed a porta arcu. Aliquam vel nulla ac orci volutpat ullamcorper. Duis quis auctor urna. Duis id felis vel velit sagittis bibendum. Praesent rutrum velit vel est iaculis, et viverra sapien placerat. Suspendisse potenti. In interdum eu lorem ac cursus. Integer pulvinar lacus nec metus consequat vehicula. Aliquam efficitur vitae neque sed aliquam. Fusce interdum tempor neque vel interdum. Praesent dapibus sollicitudin arcu id finibus. Mauris risus magna, egestas in tristique et, egestas id arcu. Proin leo urna, sollicitudin non mattis in, tempor non nisi. Praesent commodo nibh sit amet dapibus egestas.",
-            imagepath: "img/McGuffey Park.jpg",
+            name: "'Empire Hotel Rooftop",
+            description: "STAR PATRONS Kelly Ripa, Sean Combs, George Clooney THE SCOOP Nestled in between two N.Y.C. landmarks-the bustling Lincoln Center and the idyllic Central Park-this boutique hotel is the perfect base of operations for visiting culturehounds. After a gut renovation, the hotel now boasts a thoroughly modern decor and luxe amenities like teak showers and Frette linens. The rooftop bar is the perfect place to have a drink and take in the sweeping panoramas of the New York skyline. WHAT TO ORDER: Try the Kobe beef sliders, $16 or their millionaire deviled eggs with white truffle oil and gold leaf & caviar topping, $15.",
+            imagepath: "img/Empire Hotel Rooftop.jpg",
             bearing: 0,
-            center: [ -78.481707, 38.033021],
-            zoom: 17.18,
-            pitch: 0
+            center: [-73.982130, 40.771488],
+            zoom: 18,
+            pitch: 30
         },
         'mcintire-park': {
-            name: "McIntire Park",
-            description: "Fusce iaculis nulla ut augue posuere, sit amet vestibulum quam elementum. Integer quis varius sem. Mauris fermentum tempus congue. Nulla facilisi. Vestibulum congue cursus tempor. Sed sit amet venenatis magna. Duis fermentum ligula eget auctor eleifend. Aenean ullamcorper arcu et diam pharetra, a pretium lectus porttitor. Donec non lacinia est. Nullam nec felis turpis. Curabitur hendrerit porta dolor, vitae vehicula est dictum id. Ut sollicitudin lectus est, et egestas felis tempus eu. Sed at dictum ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam et diam rutrum orci placerat euismod quis vitae dui. Praesent aliquam, quam ac suscipit laoreet, metus nulla mattis justo, et egestas lectus eros ac nulla.",
-            imagepath: "img/McIntire Park.jpg",
-            bearing: 20,
-            center: [ -78.475470, 38.047131],
+            name: "Butter",
+            description: "STAR PATRONS Sarah Jessica Parker, Leighton Meester, Beyonce THE SCOOP On Monday nights, Butter sizzles with actors, models and musicians, but this East Village hangout is known as much for its impressive menu as it is for the celebrity clientele. Getting your foot in the door after-hours isn't easy, so book a table for dinner, take time to enjoy your entree and hang around for the late-night action. WHAT TO ORDER Try the Butter Raspberry Crush cocktail-a fruity blend of Belvedere Vodka, fresh raspberries, fresh lemon juice, syrup and soda, $14. Start dinner off with a Spring Pea Salad, $14. Popular entrees include a Grilled Florida Grouper, $26 and Roasted Hudson Valley Duck Breast, $27.",
+            imagepath: "img/Butter.jpg",
+            bearing: -8,
+            center: [ -73.992345, 40.728520],
             zoom: 15,
             pitch: 50
         },
         'rivanna-river': {
-            name: "Rivanna River",
-            description: "Aenean rutrum finibus ex, quis mollis ante eleifend in. Vestibulum faucibus augue tellus, ac auctor tellus maximus sit amet. Nulla quis rutrum felis. Nullam a facilisis mi, in pretium orci. Vestibulum tempus odio et accumsan lacinia. Duis tempus, dolor sit amet tristique tempus, nisl neque tristique lacus, quis viverra est risus id quam. Donec condimentum massa vitae dui consectetur vehicula. Vivamus interdum nisi sed blandit fermentum. Proin a magna et est varius euismod non quis turpis. Cras rhoncus, nulla non faucibus vestibulum, felis nunc finibus nisi, dictum sollicitudin nibh leo non lorem. Donec ut nulla id nunc elementum luctus. Fusce sed justo ac metus pretium auctor ut eget magna. Vestibulum rhoncus nibh sit amet varius tincidunt.",
-            imagepath: "img/Rivanna River.jpg",
-            bearing: 0,
-            center: [ -78.458309, 38.034810],
-            zoom: 16.13,
-            pitch: 25
+            name: "The Yard at Soho Grand",
+            description: "STAR PATRONS Ed Westwick, Kristen Dunst, Rachel Bilson, Liv Tyler, Helena Christensen, Susan Sarandon and Josh Harnett THE SCOOP This exclusive space is closed off to the public from 11AM to 4PM. For instant access, book a room at the hotel. Guests and VIPs can visit the sandstone-tiled courtyard for sunbathing, reading, or dining al fresco. From towels, to sun block, or a cool water mist spray, the cocktail servers in the Yard accommodate every request. Check out their savory menu filled with dishes like grilled swordfish skewers, king crab legs, lobster rolls and mini ice cream cones or key lime pie while sipping their Grand creations like the Grand Margarita and the Tartini. WHAT TO ORDER Order their tasty king crab legs, $22; and try their Butter Pimms Summer Punch, $65 (pitcher) and $16 (glass).",
+            imagepath: "img/The Yard at Soho Grand.jpg",
+            bearing: -50,
+            center: [ -74.004653, 40.721320],
+            zoom: 16.6,
+            pitch: 54
         }
     };
 
