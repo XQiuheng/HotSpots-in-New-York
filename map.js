@@ -5,7 +5,7 @@ var map = new mapboxgl.Map({
 	container: 'map', // this is the ID of the div in index.html where the map should go
     center: [-73.918435,40.702564], // set the centerpoint of the map programatically. Note that this is [longitude, latitude]!
     zoom: 12, // set the default zoom programatically
-	style: 'mapbox://styles/littlexu/cjpujbe7f0csy2rl3bufmk5zo', // replace this value with the style URL from Mapbox Studio
+	style: 'mapbox://styles/littlexu/cjput8cjr0klv2sptxgwhpfts', // replace this value with the style URL from Mapbox Studio
 	customAttribution: 'NYC OpenData (https://opendata.cityofnewyork.us/)', // Custom text used to attribute data source(s)
 });
 
