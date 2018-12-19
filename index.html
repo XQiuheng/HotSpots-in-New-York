@@ -1,16 +1,17 @@
 <html>
 
 <head>
-  <title>My Mapbox GL JS Map</title>
+  <title>Qiuheng Xu- Sitting with WIFI</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Link to JQuery library (used for modal) -->  
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
   <!-- Link to Mapbox GL JS library --> 
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
 
   <!-- Link to Mapbox GL JS css stylesheet -->  
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
 
   <!-- Link to our custom stylesheet -->  
   <link rel="stylesheet" href="map-floating.css">
@@ -65,6 +66,43 @@
 
     <!-- Layers control (populated by javascript code) -->
   <div id='layers-control'></div>
+<style>
+    #menu {
+        position: absolute;
+        background: #fff;
+        padding: 10px;
+        font-family: 'Open Sans', sans-serif;
+    }
+</style>
+
+
+<div id='map'></div>
+<div id='menu'>
+    <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
+    <label for='basic'>basic</label>
+    <input id='streets' type='radio' name='rtoggle' value='streets'>
+    <label for='streets'>streets</label>
+    <input id='bright' type='radio' name='rtoggle' value='bright'>
+    <label for='bright'>bright</label>
+    <input id='light' type='radio' name='rtoggle' value='light'>
+    <label for='light'>light</label>
+    <input id='dark' type='radio' name='rtoggle' value='dark'>
+    <label for='dark'>dark</label>
+    <input id='satellite' type='radio' name='rtoggle' value='satellite'>
+    <label for='satellite'>satellite</label>
+</div>
+<div class='map-overlay top'>
+    <div class='map-overlay-inner'>
+        <label>Public Bench Heatmap: <span id='library-slider-value'>50%</span></label>
+        <input id='Public Bench Heatmap' type='range' min='0' max='100' step='0' value='50' />
+
+        <label>Hotspot Heatmap: <span id='museum-slider-value'>60%</span></label>
+        <input id='Hotspot Heatmap' type='range' min='0' max='100' step='0' value='60' />
+
+        <label>Public Space: <span id='gallery-slider-value'>30%</span></label>
+        <input id='Public Space' type='range' min='0' max='100' step='0' value='30' />
+    </div>
+</div>
 
 </body>
 <!-- Link to our custom javascript, must be placed at the end of the index.html file -->  

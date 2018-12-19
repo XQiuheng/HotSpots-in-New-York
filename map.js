@@ -8,6 +8,17 @@ var map = new mapboxgl.Map({
 	style: 'mapbox://styles/littlexu/cjput8cjr0klv2sptxgwhpfts', // replace this value with the style URL from Mapbox Studio
 	customAttribution: 'NYC OpenData (https://opendata.cityofnewyork.us/)', // Custom text used to attribute data source(s)
 });
+// // change layer opacity
+var PublicBenchHeatmapslider = document.getElementById('Public Bench Heatmap');
+var HotspotHeatmapslider = document.getElementById('Hotspot Heatmap');
+var PublicSpaceslider = document.getElementById('Public Space');
+
+// //...more slider variables here
+var PublicBenchHeatmapSliderValue = document.getElementById('Public Bench Heatmap-slider-value');
+var HotspotHeatmaprValue = document.getElementById('Public Bench Heatmap-slider-value');
+var PublicSpaceSliderValue = document.getElementById('Public Space-slider-value');
+
+//...more slider value variables here
 
 // Show modal when About button is clicked
 $("#about").on('click', function() { // Click event handler for the About button in jQuery, see https://api.jquery.com/click/
@@ -285,6 +296,7 @@ for (i=0; i<layers.length; i++) {
     }
 
 
+
 // ADD GEOJSON DATA (static layers)
 
     // See example at https://www.mapbox.com/mapbox-gl-js/example/live-geojson/
@@ -303,6 +315,8 @@ for (i=0; i<layers.length; i++) {
             "layout": {
                 "icon-image": "embassy-15"
             }
+
         });
+
     });
 
